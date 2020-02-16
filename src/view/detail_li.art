@@ -1,0 +1,12 @@
+ <%for(var i=0;i<midDetail.trackDetailInfos.length;i++){%>
+          <li>
+             <a class="program_A">
+             <i class="iconfont  playBn">&#xe63a;</i><audio src= <%- midDetail.trackDetailInfos[i].trackInfo.playPath %> ></audio>
+             
+                <div>
+                    <p><%- midDetail.trackDetailInfos[i].trackInfo.title %></p>
+                </div>
+                <i class="iconfont">&#xe640;  </i>
+                </a>
+                </li>
+<%}%>

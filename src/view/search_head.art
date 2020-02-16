@@ -1,0 +1,7 @@
+<div class="search_head">
+    <a class="logo" ><img src="../../public/img/logo.png"></a>
+    <a href="/#/search">   
+    <span class="iconfont">&#xe601;</span>
+    <span>搜索</span>
+    </a>
+</div>

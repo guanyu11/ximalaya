@@ -1,0 +1,7 @@
+    <div class="nav_ul">
+        <%for(var i=1;i<navData.length;i++){%>
+            <a  data-key=<%-navData[i].moduleKey %>  class= <%- i===1?"active nav_ul_sort":"nav_ul_sort" %>><%-navData[i].moduleName %></a>
+        <%}%>
+            <a href="/#/classify">更多</a>
+
+    </div>

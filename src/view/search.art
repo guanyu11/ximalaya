@@ -1,0 +1,24 @@
+<div class="search-header">
+    <div>
+        <i class="iconfont">&#xe601;</i>
+        <input type="text"  autofocus class="search-input"/>
+        <i class="iconfont clearOut"> &#xe604;</i>
+    </div>
+    <div class="back">
+       取消
+    </div>
+</div>
+<div class="Record">
+    <div class="Record-t">
+        <div>搜索历史</div>
+        <div class="clear">
+            <i class="iconfont">&#xe632;</i>
+        </div>
+    </div>
+    <div class="Record-b">
+        <%for(var i=0;i<data.length;i++){%>
+            <div><%-data[i]%></div>
+        <%}%>
+    </div>
+</div>
+<div class="search-list"></div>

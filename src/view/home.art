@@ -1,0 +1,120 @@
+{{if banners.length>0}}
+    <div class="banner_con"> 
+    <div class="banner"> 
+    <ul>
+        <%for(var i=0;i<banners.length;i++){%>
+            <li>
+                <img src=<%-banners[i].adFocusPictureDetail.cover%>>
+            </li>
+        <%}%>
+    </ul>
+    </div>
+    </div>
+{{/if}}
+
+
+
+<div class="tomatoes">
+    <div class="fiveIconHome">
+        <%for(var i=0;i<tomatoes.length;i++){%>
+        
+            <a>
+                <img src=<%-tomatoes[i].img%>>
+                <span><%-tomatoes[i].name %></span>
+            </a>
+            
+        <%}%>
+    </div>
+</div>
+<div class="moduleRankDatas">
+     <%for(var i=0;i<moduleRankDatas.length;i++){%>
+        <div class="rank"> 
+            <div class="rank_title"> <%-moduleRankDatas[i].moduleInfo.displayName%> </div> 
+             <div class="rank_rowItem">  
+             <%for(var j=0;j<3;j++){%>
+             <a class="detail_A" data-id=<%-moduleRankDatas[i].albumBriefDetailInfos[j].albumInfo.id%>>
+                <div>
+                    <img src=https://fdfs.xmcdn.com/<%-moduleRankDatas[i].albumBriefDetailInfos[j].albumInfo.cover%>>
+                </div>
+                <div >
+                    <span><%-moduleRankDatas[i].albumBriefDetailInfos[j].albumInfo.title%></span>
+                </div>
+            </a>
+              <%}%>
+             </div> 
+             <div class="rank_colItem"> 
+                <%for(var j=3;j<moduleRankDatas[i].albumBriefDetailInfos.length;j++){%>
+                    <a class="detail_A" data-id=<%-moduleRankDatas[i].albumBriefDetailInfos[j].albumInfo.id%>>
+                        <div> 
+                        <img src=https://fdfs.xmcdn.com/<%-moduleRankDatas[i].albumBriefDetailInfos[j].albumInfo.cover%>>
+                        </div> 
+                         <div> 
+                         <p><%-moduleRankDatas[i].albumBriefDetailInfos[j].albumInfo.title%></p>
+                         <p><%-moduleRankDatas[i].albumBriefDetailInfos[j].albumInfo.salePoint%></p>
+                          <p> 
+                          <span class="iconfont">&#xeae0;</span>
+                      
+                          <span>
+
+                          <%-moduleRankDatas[i].albumBriefDetailInfos[j].statCountInfo.trackCount%>
+                          
+                          
+                          </span>
+                          <span class="iconfont">&#xe600;</span>
+                            {{if moduleRankDatas[i].albumBriefDetailInfos[j].statCountInfo.playCount/100000000>1}}
+                             <span><%-(moduleRankDatas[i].albumBriefDetailInfos[j].statCountInfo.playCount/100000000).toFixed(2)%>亿</span>
+                            {{else if moduleRankDatas[i].albumBriefDetailInfos[j].statCountInfo.playCount/10000>1}}
+                            <span><%-(moduleRankDatas[i].albumBriefDetailInfos[j].statCountInfo.playCount/100000).toFixed(2)%>万</span>
+                            {{else}}
+                            <span><%-moduleRankDatas[i].albumBriefDetailInfos[j].statCountInfo.playCount%></span>
+                            {{/if}}
+                          
+                          </p>
+                        </div> 
+            <div class="clearFloat"> </div> 
+                
+                    </a>
+                <%}%>
+             </div> 
+
+           
+        </div>
+
+        <%}%>
+</div>
+<div class="moduleRankDatas">
+   
+        <div class="rank"> 
+            <div class="rank_title">更多推荐 </div> 
+             <div class="rank_colItem"> 
+                <%for(var i=0;i<moreCommend.length;i++){%>
+                    <a class="detail_A" data-id=<%-moreCommend[i].data.albumInfo.id%>  >
+                        <div> 
+                        <img src=https://fdfs.xmcdn.com/<%-moreCommend[i].data.albumInfo.cover%>>
+                        </div> 
+                         <div> 
+                         <p><%-moreCommend[i].data.albumInfo.title%></p>
+                         <p><%-moreCommend[i].data.albumInfo.salePoint%></p>
+                          <p> 
+                          <span class="iconfont">&#xeae0;</span>
+                          <span><%-moreCommend[i].data.statCountInfo.trackCount%></span>
+                          <span class="iconfont">&#xe600;</span>
+                             {{if moreCommend[i].data.statCountInfo.playCount/100000000>1}}
+                             <span><%-(moreCommend[i].data.statCountInfo.playCount/100000000).toFixed(2)%>亿</span>
+                            {{else if moreCommend[i].data.statCountInfo.playCount/10000>1}}
+                            <span><%-(moreCommend[i].data.statCountInfo.playCount/100000).toFixed(2)%>万</span>
+                            {{else}}
+                            <span><%-moreCommend[i].data.statCountInfo.playCount%></span>
+                            {{/if}}
+                          </p>
+                        </div> 
+                
+                    </a>
+                <%}%>
+             </div> 
+
+           
+        </div>
+
+</div>
+

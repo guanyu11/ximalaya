@@ -1,0 +1,73 @@
+
+<div class="detail_top" >
+
+    <div class="detail_con"  >
+    <div class="detail_left">
+        <img  src=http://imagev2.xmcdn.com/<%=topDetail.albumDetailInfo.albumInfo.cover %>>
+        <p>
+        <div class="left_bot">
+        
+         <span class="iconfont">&#xe600;</span>
+        {{if topDetail.albumDetailInfo.statCountInfo.playCount/100000000>1}}
+         <span><%-(topDetail.albumDetailInfo.statCountInfo.playCount/100000000).toFixed(2)%>亿</span>
+        {{else if topDetail.albumDetailInfo.statCountInfo.playCount/10000>1}}
+       <span><%- (topDetail.albumDetailInfo.statCountInfo.playCount/10000).toFixed(2) %>万</span>
+        {{else}}
+    <span><%- topDetail.albumDetailInfo.statCountInfo.playCount %></span>
+         {{/if}}  
+         
+         </p>
+         </div>
+
+     </div>
+     <div class="detail_right">
+        <p><%-topDetail.albumDetailInfo.albumInfo.title %></p>
+        <a><img src=http://imagev2.xmcdn.com/<%-authData.userInfo.logo %>>
+        <span><%-authData.userInfo.nickname %></span>
+        </a>
+         <p>
+        {{if topDetail.albumDetailInfo.statCountInfo.subscribeCount/100000000>1}}
+         <span>已订阅<%-(topDetail.albumDetailInfo.statCountInfo.subscribeCount/100000000).toFixed(2)%>亿人</span>
+        {{else if topDetail.albumDetailInfo.statCountInfo.subscribeCount/10000>1}}
+       <span>已订阅<%- (topDetail.albumDetailInfo.statCountInfo.subscribeCount/10000).toFixed(2) %>万人</span>
+         {{else}}
+    <span>已订阅<%- topDetail.albumDetailInfo.statCountInfo.subscribeCount %>人</span>
+         {{/if}}                    
+        <a> <span>+免费订阅</span>
+        </a>
+        </p>
+     </div>
+    </div>
+</div>
+   <div class="detail_txt">
+        <p class="">
+        <%- topDetail.albumDetailInfo.albumInfo.salePoint %>
+        <span class="iconfont"> &#xe727; </span>
+        </p>
+        <div class="">
+        <p>
+         <%- topDetail.albumDetailInfo.albumInfo.shortIntro %>
+        </P>
+        </div>
+
+     </div>
+
+    <div class="detail_program ">
+        <div>
+        <p>节目(<%- topDetail.albumDetailInfo.statCountInfo.trackCount %> )
+        <span>批量下载<i class="iconfont">&#xe638; </i></span>
+        </p>
+        </div>
+        <div  >
+        <ul class="program_list" >
+         
+            </ul>
+            <div  class="loadMore"><p>加载更多<span class="iconfont">&#xe727;</span></p></div>
+            </div>
+
+       
+
+     </div>
+  
+  
+

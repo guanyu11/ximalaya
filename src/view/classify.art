@@ -1,0 +1,39 @@
+ <div class="sort-list">
+    <ul >
+        <%for(var i=0;i<data.length;i++){%>
+            {{if  i===0}}
+            <li  class="sort-list-li sort-active">
+             {{else}}
+            <li   class="sort-list-li">
+            {{/if}}
+            
+            <%-data[i].category.displayName%></li>
+        <%}%>
+    </ul>
+</div>
+ <div class="sort-right-con">
+ <div class="sort-right">
+        <%for(var i=0;i<data.length;i++){%>
+           {{if  i===0}}
+            <div class="sort-right-itemtop sort-right-active"  >
+            {{else}}
+             <div class="sort-right-itemtop "  >
+              {{/if}}
+            <p>
+            <span><%-data[i].category.displayName%></span>
+             <span>/共<%-data[i].albumCount%>张专辑</span></P>
+            </div>
+             <div class="sort-right-itemCon">
+        <%for(var j=0;j<data[i].category.subCategories.length;j++){%>
+             <a>
+             <%- data[i].category.subCategories[j].displayValue%>
+             </a>
+             
+        <%}%>
+             
+             </div>
+        <%}%>
+</div>
+</div>
+    
+

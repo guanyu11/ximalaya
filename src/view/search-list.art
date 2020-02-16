@@ -1,0 +1,33 @@
+   <div class="search_first">  
+  <a class="detail_A" data-id=<%-data.albumResultList[0].id%>>
+                        <div> 
+                        <img src=<%-data.albumResultList[0].imgPath%>>
+                        </div> 
+                         <div> 
+                         <p><%-data.albumResultList[0].highlightKeyword%></p>
+                          <p> 
+                          <span ><%- data.albumResultList[0].category %></span>
+                          <span class="iconfont">&#xe600;</span>
+                            {{if data.albumResultList[0].play/100000000>1}}
+                             <span><%-(data.albumResultList[0].play/100000000).toFixed(2)%>亿</span>
+                            {{else if data.albumResultList[0].play/10000>1}}
+                            <span><%-(data.albumResultList[0].play/100000).toFixed(2)%>万</span>
+                            {{else}}
+                            <span><%-data.albumResultList[0].play%></span>
+                            {{/if}}
+                        <span class="iconfont">&#xeae0;</span>
+                          <span>
+                          <%-data.albumResultList[0].tracks%>
+                          </span>
+                          </p>
+                        </div> 
+                    </a>
+</div>
+<div class="search_P">
+
+ <%for(var i=0;i<data.queryResultNum;i++){%>
+    <a class="detail_A" data-id=<%-data.queryResultList[i].id%> >
+    <p><%- data.queryResultList[i].highlightKeyword %></p>
+    </a>
+<%}%>
+</div>
